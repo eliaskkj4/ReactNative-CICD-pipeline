@@ -6,5 +6,9 @@ module.exports = defineConfig([
   expoConfig,
   {
     ignores: ['dist/*'],
+    rules: {
+      semi: ['error', 'always'],           // Kræver semikolon
+      'comma-style': ['error', 'last'],    // Kræver komma sidst på linjen
+    },
   },
 ]);
