@@ -22,8 +22,10 @@ jobs:
       - name: Install EAS CLI
         run: npm install -g eas-cli
 
-      - name: Login to Expo
-        run: eas login --token ${{ secrets.EXPO_TOKEN }}
+      - name: Login to Expo (implicit via EXPO_TOKEN)
+        run: echo "Logged in via EXPO_TOKEN environment variable"
+        env:
+          EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
 
       - name: Build Android
         run: eas build --platform android --profile production --non-interactive
